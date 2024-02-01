@@ -13,8 +13,8 @@ export class UsuarioController {
   }
 
   @Get()
-  findAll() {
-    return this.usuarioService.findAll();
+  findByEmail(@Body() email: string) {
+    return this.usuarioService.findByEmail(email['email']);
   }
 
   @Get(':id')
